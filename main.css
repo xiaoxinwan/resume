@@ -34,9 +34,19 @@ a {
 .topNavBar {
     padding: 22px 0px 22px 0px;
     position: fixed;
+    color: #b7b7b7;
     top: 0;
     left: 0;
     width: 100%;
+    transition: all 0.5s;
+}
+
+.topNavBar.sticky{
+    padding: 12px 0px;
+    background: rgb(53, 54, 59);
+    z-index: 1;
+    box-shadow:0 0 10px rgba(0, 0, 0, 0.4);
+    color: #9a9da2;
 }
 
 .topNavBar-inner {
@@ -62,7 +72,7 @@ a {
 
 .topNavBar nav>ul>li>a {
     font-size: 13px;
-    color: #b7b7b7;
+    color: inherit;
     font-weight: bold;
     border-top: 3px solid transparent;
     border-bottom: 3px solid transparent;
