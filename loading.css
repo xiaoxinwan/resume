@@ -1,0 +1,39 @@
+.loading {
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+    position: relative;
+}
+
+.loading::before,
+.loading::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    animation: amplify 1.5s infinite;
+}
+
+.loading::after {
+    animation-delay: 0.75s;
+}
+
+@keyframes amplify {
+    0% {
+        width: 0px;
+        height: 0px;
+        opacity: 1;
+    }
+    100% {
+        width: 100px;
+        height: 100px;
+        opacity: 0;
+    }
+}

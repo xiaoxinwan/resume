@@ -4,7 +4,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>李新喜的个人简历</title>
-	<link rel="stylesheet" href="./a.css">
+	<link rel="stylesheet" href="./main.css">
+	<link rel="stylesheet" href="./loading.css">	
 	<script src="//at.alicdn.com/t/font_703295_ow9qzbyx5z9.js"></script>
 	<style type="text/css">
 		.icon {
@@ -14,10 +15,26 @@
 			fill: currentColor;
 			overflow: hidden;
 		}
+		.siteWelcome{
+			display: none;
+			position: fixed;
+			top: 0;left: 0;width: 100%;height: 100%;
+			background: #000000;
+			z-index: 1;
+			justify-content:center; 
+			align-content: center;
+		}
+		.siteWelcome .active{
+			display: flex;
+		}
 	</style>
 </head>
 
 <body>
+<div class="siteWelcome active">
+	<div class="loading"></div>	
+</div>
+
 	<div class="topNavBar">
 		<div class="topNavBar-inner clearfix">
 			<a class="logo" href="#" alt="logo" style: "float: left;">
