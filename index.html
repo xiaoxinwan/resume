@@ -36,9 +36,7 @@
 </head>
 
 <body>
-    <div id="siteWelcome" class="siteWelcome active">
-        <div class="loading"></div>
-    </div>
+    
 
     <div id="topNavBar" class="topNavBar">
         <div class="topNavBar-inner clearfix">
@@ -88,7 +86,7 @@
         <div class="mask"></div>
     </div>
     <main>
-        <div id="siteAbout" class="userCard">
+        <div data-x id="siteAbout" class="userCard">
             <div class="pictureAndText clearfix">
                 <div class="picture">
                     <img src="./img/avatar.jpg" width=299 height=347 alt="头像">
@@ -148,7 +146,7 @@
             <br> 技能：前端开发，Vue.js开发
         </p>
     </main>
-    <section id="siteSkills" class="skills">
+    <section data-x id="siteSkills" class="skills">
         <h2>技能</h2>
         <ol class="clearfix">
             <li>
@@ -189,7 +187,7 @@
             </li>
         </ol>
     </section>
-    <section id="siteWorks" class="portfolio">
+    <section data-x id="siteWorks" class="portfolio">
         <h2>作品集</h2>
         <nav>
             <ol class="clearfix">
@@ -228,17 +226,49 @@
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
     <script>
-        setTimeout(function() {
-            siteWelcome.classList.remove('active')
-        }, 1000)
+    
+        
+
+        //添加offset类
+        let specialTags = document.querySelectorAll('[data-x]') //选择有[data-x]的元素
+        for(let i = 0; i<specialTags.length;i++){
+            specialTags[i].classList.add('offset')
+        }
+
+       
+        findClosest()
 
         //判断用户是否滚动页面
-        window.onscroll = function() {
+        window.onscroll = function(x) {
             if (window.scrollY > 0) {
                 topNavBar.classList.add('sticky')
             } else {
                 topNavBar.classList.remove('sticky')
             }
+            findClosest()
+        }
+
+        function findClosest() {
+            let specialTags = document.querySelectorAll('[data-x]') //选择有[data-x]的元素
+            let minIndex = 0
+            for (let i = 1; i < specialTags.length; i++) {
+                if (Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)) {
+                    //判断谁离顶部最近
+                    minIndex = i
+                }
+            }
+            specialTags[minIndex].classList.remove('offset')
+            for (let i = 0; i < specialTags.length; i++) {
+                specialTags[i].classList.remove('active')
+            }
+            let id = specialTags[minIndex].id
+            let a = document.querySelector('a[href="#' + id + '"]')
+            let li = a.parentNode
+            let brotherAndMe = li.parentNode.children
+            for (let i = 0; i < brotherAndMe.length; i++) {
+                brotherAndMe[i].classList.remove('highlight')
+            }
+            li.classList.add('highlight')
         }
 
         let liTags = document.querySelectorAll('nav.menu > ul > li')
@@ -253,6 +283,7 @@
         }
 
         let aTags = document.querySelectorAll('nav.menu > ul > li > a')
+
         function animate(time) {
             requestAnimationFrame(animate);
             TWEEN.update(time);
