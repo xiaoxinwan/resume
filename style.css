@@ -7,6 +7,7 @@ body {
 * {
     margin: 0;
     padding: 0;
+    border: none;
 }
 
 hr {
@@ -382,68 +383,31 @@ section.skills p {
 section.portfolio {
     text-align: center;
     margin-bottom: 100px;
+    max-width: 786px;
 }
 
-section.portfolio>nav {
-    text-align: center;
-    display: inline-block;
-    vertical-align: top;
-    margin-top: 30px;
+section.portfolio h2{
+    padding-bottom: 30px;
 }
 
-section.portfolio>nav>ol {
-    /* border: 1px solid red; */
-    margin: 0 auto;
-    display: inline-block;
-    vertical-align: top;
+section.portfolio .swiper-container {
+    width: 780px;
+    height: 585px;
 }
 
-section.portfolio>nav>ol>li {
-    float: left;
-    margin-left: 40px;
-    cursor: pointer;
+section.portfolio .swiper-button-prev,
+section.portfolio .swiper-button-next{
+    outline: none;
+    background-color: rgb(39, 41, 46);
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    right: 100%;
+    left: auto;
+
 }
 
-section.portfolio>nav>ol>li:nth-child(1) {
-    margin-left: 0;
-}
-
-section.portfolio>nav .bar {
-    /* border: 1px solid red; */
-    height: 5px;
-    background: rgb(43, 77, 96);
-    margin-top: 5px;
-    margin-bottom: 28px;
-    border-radius: 2px;
-}
-
-section.portfolio>nav .bar-inner {
-    height: 100%;
-    background: rgb(7, 170, 245);
-    border-radius: 2px;
-    transition: 0.3s;
-}
-
-section.portfolio>nav .bar.state-1 .bar-inner {
-    margin-left: 0px;
-    width: 14%;
-}
-
-section.portfolio>nav .bar.state-2 .bar-inner {
-    margin-left: 72px;
-    width: 14%;
-}
-
-section.portfolio>nav .bar.state-3 .bar-inner {
-    margin-left: 145px;
-    width: 38%;
-}
-
-section.portfolio>.works {
-    position: relative;
-}
-
-section.portfolio>.works .big,
-section.portfolio>.works .small {
-    position: absolute;
+section.portfolio .swiper-button-next{
+    left: 100%;
+    right: auto;
 }
