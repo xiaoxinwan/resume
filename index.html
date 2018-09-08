@@ -180,15 +180,18 @@
             <div class="swiper-button-next"></div>
         </div>
     </section>
-    <section>
+    <section class="message">
         <h2>留言</h2>
+        <ol id="messageList">
+        </ol>
         <form id="postMessageForm" style="width: 700px; margin:50px auto; padding: 50px auto;">
+            <label>姓名</label>
+            <input type="text" name="name">
+            <label>内容</label>
             <input type="text" name="content">
             <input type="submit" value="提交">
         </form>
-        <h2>留言列表</h2>
-        <ul id="messageList">
-        </ul>
+        
     </section>
 
 
