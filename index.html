@@ -13,9 +13,8 @@
 <body>
     <div id="topNavBar" class="topNavBar">
         <div class="topNavBar-inner clearfix">
-            <a class="logo" href="#" alt="logo" style: "float: left;">
-                <span class="rs">RS</span>
-                <span class="card">card</span>
+            <a class="logo" href="#" alt="logo">
+                <span class="rs">L</span><span class="card">XX</span>
             </a>
             <nav class="menu">
                 <ul class="clearfix">
@@ -45,7 +44,7 @@
                         <a href="#">日历</a>
                     </li>
                     <li>
-                        <a href="#">联系方式</a>
+                        <a href="#message">留言</a>
                     </li>
                     <li>
                         <a href="#">其他</a>
@@ -67,7 +66,7 @@
                     <img src="./img/avatar.jpg" width=299 height=347 alt="头像">
                 </div>
                 <div class="text clearfix">
-                    <span class="welcome">Hello
+                    <span class="welcome">你好，我是
                         <span class="triangle"></span>
                     </span>
                     <h1>李新喜</h1>
@@ -80,12 +79,17 @@
                         <dd>24</dd>
                         <!--description definition-->
                         <dt>所在城市</dt>
-                        <dd>广东广州</dd>
+                        <dd>广东江门</dd>
                         <dt>邮箱</dt>
                         <dd>lixinxi1010@gmail.com</dd>
                         <dt>联系方式</dt>
                         <dd>131606666666</dd>
                     </dl>
+                </div>
+                <div>
+                    <p class="downloadResumeWrapper">
+                        <a href="./resume.pdf" class="downloadResume" target="_blank" download>下载简历</a>
+                    </p>
                 </div>
             </div>
             <footer class="media">
@@ -111,13 +115,7 @@
                 </a>
             </footer>
         </div>
-        <p class="downloadResumeWrapper">
-            <a href="./resume.pdf" class="downloadResume" target="_blank" download>Download Resume</a>
-        </p>
-        <p class="selfIntroduction">
-            你好，我是李新喜。初级前端开发工程师。
-            <br> 技能：前端开发，Vue.js开发
-        </p>
+        
     </main>
     <section data-x id="siteSkills" class="skills">
         <h2>技能</h2>
@@ -180,7 +178,7 @@
             <div class="swiper-button-next"></div>
         </div>
     </section>
-    <section class="message">
+    <section data-x id="message" class="message">
         <h2>留言</h2>
         <ol id="messageList">
         </ol>
